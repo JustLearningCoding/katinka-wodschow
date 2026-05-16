@@ -1,0 +1,13 @@
+import { chromium } from 'playwright';
+const browser = await chromium.launch({ headless: true });
+const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+const page = await ctx.newPage();
+console.log('navigating...');
+await page.goto('https://katinka-wodschow.vercel.app/', { waitUntil: 'domcontentloaded', timeout: 30000 });
+await page.waitForTimeout(3000);
+console.log('screenshotting top...');
+await page.screenshot({ path: '/tmp/kat-top.png', fullPage: false });
+console.log('screenshotting full...');
+await page.screenshot({ path: '/tmp/kat-full.png', fullPage: true });
+console.log('done');
+await browser.close();

@@ -1,0 +1,23 @@
+# build output
+dist/
+.astro/
+node_modules/
+
+# logs
+npm-debug.log*
+
+# environment
+.env
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Vercel
+.vercel
+
+# Tools (not part of the deployed site)
+_tools/node_modules/

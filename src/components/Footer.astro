@@ -1,0 +1,13 @@
+---
+import { site } from "../content/site";
+const year = new Date().getFullYear();
+---
+
+<footer class="px-6 sm:px-12 lg:px-16 py-14 border-t" style="border-color: var(--color-line);">
+  <div class="mx-auto max-w-7xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+    <p class="font-serif text-lg italic" style="color: var(--color-ink);">
+      Katinka Wodschow
+    </p>
+    <p class="eyebrow">© {year} · {site.city}</p>
+  </div>
+</footer>

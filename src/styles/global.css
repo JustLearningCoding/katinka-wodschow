@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/* Gallery-style serif: Cormorant Garamond — closer to traditional art catalogues */
+@import "@fontsource/cormorant-garamond/300.css";
+@import "@fontsource/cormorant-garamond/400.css";
+@import "@fontsource/cormorant-garamond/500.css";
+@import "@fontsource/cormorant-garamond/300-italic.css";
+@import "@fontsource/cormorant-garamond/400-italic.css";
+@import "@fontsource-variable/inter/index.css";
+
+@theme {
+  /* No brand palette — the paintings are the palette.
+     Site uses paper-white background, ink-black text, and one warm grey accent. */
+  --color-paper: #FBFAF7;          /* warm white, slightly off — softer than #FFF */
+  --color-paper-soft: #F4F1EA;     /* secondary panels */
+  --color-ink: #131211;            /* near-black, very warm */
+  --color-ink-muted: #5B564F;      /* secondary text */
+  --color-ink-soft: #8A847A;       /* captions, dates */
+  --color-line: #E5DFD3;           /* hairline borders */
+
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+
+  --tracking-display: -0.01em;
+  --tracking-eyebrow: 0.22em;
+}
+
+html {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: var(--color-paper);
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: var(--tracking-display);
+  color: var(--color-ink);
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+}
+
+.editorial-link {
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--color-line);
+  transition: text-decoration-color 200ms ease;
+}
+.editorial-link:hover {
+  text-decoration-color: var(--color-ink);
+}
+
+.rule {
+  height: 1px;
+  background-color: var(--color-line);
+  border: 0;
+}
